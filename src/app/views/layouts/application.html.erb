@@ -8,20 +8,110 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+    <!-- Bulma -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/e66f438cf5.js" crossorigin="anonymous"></script>
   </head>
 
-  <body>
-    <%= yield %>
-    
-    <!--JavaScript at end of body for optimized loading-->
-    <script type="text/javascript" src="js/materialize.min.js"></script>
 
+  <!-- Nav Bar -->
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="container is-fluid">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="">
+            <%= image_tag "logo_blue.png" %>
+        </a>
+    
+        <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+    
+      <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item">
+            Home
+          </a>
+    
+          <a class="navbar-item">
+            Documentation
+          </a>
+    
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">
+              More
+            </a>
+    
+            <div class="navbar-dropdown">
+              <a class="navbar-item">
+                About
+              </a>
+              <a class="navbar-item">
+                Jobs
+              </a>
+              <a class="navbar-item">
+                Contact
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                Report an issue
+              </a>
+            </div>
+          </div>
+        </div>
+
+        
+    
+        <div class="navbar-end">
+            <a class="navbar-item">
+                
+              <span class="icon">
+              <i class="fas fa-user-circle"></i>
+              </span>
+              <span>Sign up</span>
+                  
+            </a>
+            <a class="navbar-item">
+                <span class="icon">
+                <i class="fas fa-unlock-alt"></i>
+                </span>
+                <span>Login</span>
+            </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  
+
+  <body>
+      <div class="container">
+
+      <% if notice %>
+        <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+        <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
+
+
+
+      <%= yield %>
+      </div>
   </body>
+
+  <footer class="footer">
+    <div class="content has-text-centered">
+      <p>
+        <strong>CodeMeetr</strong> by <a href="https://alexleybourne.com/">Alex Leybourne.</a>
+      </p>
+    </div>
+  </footer>
+
 </html>
