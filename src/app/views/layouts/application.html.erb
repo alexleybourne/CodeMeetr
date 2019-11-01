@@ -12,19 +12,24 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
 
-  <head>
-      <%= render "layouts/navbar" %>
-  </head>
-
   <body>
+
+      <div>
+        <%= render 'layouts/navbar' %>
+      </div>
+
+
+      <div class="container">
       <!-- Devise Notices -->
-      <p><%= notice %></p>
-      <p><%= alert %></p>
+      <p class="notice"><%= notice %></p>
+      <p class="alert" ><%= alert %></p>
 
 
       <%= yield %>
 
       <%= render "layouts/footer" %>
+
+      </div>
 
       <!-- Bootstrap Scripts -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
