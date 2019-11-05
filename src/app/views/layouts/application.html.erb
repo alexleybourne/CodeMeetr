@@ -10,6 +10,9 @@
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/e66f438cf5.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -21,8 +24,14 @@
 
       <div class="container">
       <!-- Devise Notices -->
-      <p class="notice"><%= notice %></p>
-      <p class="alert" ><%= alert %></p>
+      <%= render 'layouts/messages' %>
+      
+      <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+      <% end %>
+      <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+      <% end %>
 
 
       <%= yield %>
