@@ -4,15 +4,22 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         validate :password_complexity
-         validate :password_complexity
+  has_many :owned_events, class_name: 'Event'
+
+  has_many :pricings, through: :owned_events
+  has_many :promotions, through: :owned_events
+
+  has_and_belongs_to_many :events
+
+  validates :dob, presence: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  
+  validate :password_complexity
   
   def password_complexity
-    # Regexp extracted from https://stackoverflow.com/questions/19605150/regex-for-password-must-contain-at-least-eight-characters-at-least-one-number-a
-    return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,70}$/
+    return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$/
 
-    errors.add :password, 'Complexity requirement not met. Length should be 8-70 characters and include: 1 uppercase, 1 lowercase and 1 digit'
+    errors.add :password, 'Password complexity requirement not met.'
   end
 end
-
-

@@ -1,47 +1,53 @@
-
-<!-- Sign Up Form made pretttttty -->
-
 <section class="form-auth text-center">
-    <form class="form-signin">
+    <div class="card border-primary mb-3" style="max-width: 28rem; margin: auto;">
+        <div class="card-body text-primary text-center">
 
+    <h1>Sign up</h1>
       
-
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign up</h1>
 
+      <div class="s_errors">
       <%= render "devise/shared/error_messages", resource: resource %>
-    
-      <div class="field">
-      <%= f.text_field :firstname, autofocus: true, class: "form-control", 
-      placeholder:"First name", required: true %>
       </div>
-  
+
       <div class="field">
-      <%= f.text_field :lastname, class: "form-control", 
-      placeholder:"Last name", required: true %>
+        <%= f.text_field :first_name, autofocus: true, class: "form-control", required: true, placeholder:"First name" %>
       </div>
-  
+
       <div class="field">
-      <%= f.email_field :email, class: "form-control", id:"inputEmail", 
-      placeholder:"Email address", required: true %>
+        <%= f.text_field :last_name, autofocus: true, class: "form-control", required: true, placeholder:"Last name" %>
       </div>
-  
+
       <div class="field">
-      <%= f.password_field :password, autocomplete: "new-password", placeholder:"Password 6 characters minimum", 
-      class: "form-control", required: true %>
+        <%= f.date_field :dob, autofocus: true, class: "form-control", required: true %>
       </div>
-  
+
       <div class="field">
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder:"Password Confirmation", 
-      class: "form-control", required: true %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", required: true, placeholder:"Email" %>
       </div>
-  
+
+      <div class="field">
+        <%= f.password_field :password, autocomplete: "new-password", class: "form-control", required: true, placeholder:"Password (6 characters minimum)" %>
+      </div>
+
+      <div class="field">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", required: true, placeholder: "Password Confirmation" %>
+      </div>
+
+      <P>(Password must contain 8-20 characters and include: 1 uppercase, 1 lowercase and 1 number)</P>
+
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
+      <br>
     <% end %>
-    <br>
+
+    <div class="card-footer bg-transparent border-primary">
+
     <%= render "devise/shared/links" %>
 
-  </form>
-  </section>
+  </div>
+
+        </div>
+        </div>
 
 
+</section>

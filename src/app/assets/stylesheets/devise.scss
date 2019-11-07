@@ -1,6 +1,6 @@
 .form-auth {
     width: 100%;
-    max-width: 330px;
+    max-width: 550px;
     padding: 15px;
     margin: auto;
     margin-top: 60px;
@@ -27,6 +27,19 @@
         margin-bottom: 10px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
+    }
+
+    p{
+        font-size: 10px;
+    }
+
+    h1{
+        color:#007bff;
+        font-weight: 400;
+    }
+
+    .danger-time {
+        background-color: #F7567C;
     }
 }
 
@@ -62,3 +75,49 @@ body {
     color: #468847;
     text-align: left;
  }
+
+// Better Looking Errors in sign up area
+
+ .s_errors {
+    h2 {
+        color: white;
+        font-size: 0px;
+    }
+
+    .better_errors {
+        font-size: 0%;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      li {
+        padding-left: 1.3em;
+        color: #F7567C;
+      }
+      li:before {
+        content: "\f057"; /* FontAwesome Unicode */
+        font-family: FontAwesome;
+        display: inline-block;
+        margin-left: -1.3em; /* same as padding-left set on li */
+        width: 1.3em; /* same as padding-left set on li */
+        color: #F7567C;
+      }
+
+      body {
+        padding-top: 10px;
+     }
+
+ }
+
+.clean_link {
+    text-decoration: none;
+
+    a{
+        color: white;
+        hover { color:white; }
+    }
+}
+
