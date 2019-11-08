@@ -1,47 +1,68 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Events</h1>
+<section class="text-center">
+  <h1>Events</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Cover image</th>
-      <th>Host name</th>
-      <th>Color</th>
-      <th>Location</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Pricing</th>
-      <th>Promotion</th>
-      <th>User</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.cover_image %></td>
-        <td><%= event.host_name %></td>
-        <td><%= event.color %></td>
-        <td><%= event.location %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
-        <td><%= event.pricing %></td>
-        <td><%= event.promotion %></td>
-        <td><%= event.user %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+  <div class="input-group search">
+    <%= form_tag(events_path, method: :get) do %> <%= text_field_tag(:search,
+    params[:search], class:'form-control', placeholder: 'Search for your next event' )%> 
     <% end %>
-  </tbody>
-</table>
+    <div class="input-group-append">
+      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+      <i class="fa fa-search"></i>
+      <% end %>
+    </div>
+  </div>
+</section>
 
-<br>
+<div class="row-goodness">
+    <% Event.all.each do |event| %>
+    <div class="d-flex justify-content-center" style="padding-top: 1rem; padding-bottom: 1rem;">
+      <div class="card text-center" style="max-width: 24vw; position: relative;">
+  
+        <h3 style=" position: absolute; top: 25%;
+        left: 50%; transform: translate(-50%, -50%);" class="btn btn-<%=event.color %> btn-lg btn-opacity">
+          <%= event.title %></h3>
+  
+        <img
+          class="card-img-top" style="height: 28vh;"
+          src="<%= event.cover_image %>"
+          alt="Card image cap"
+        />
+  
+        <div class="card-body" >
+  
+          <p style="font-size: 12px;">
+              <!-- Date converted from Unix -->
+              <i class="far fa-calendar-alt"></i> 
+              <%= Time.at(event.start_time).strftime('%a-%d-%b-%Y') %>
+              &nbsp; &nbsp;
+  
+          <!-- Time converted from Unix -->
+  
+              <i class="far fa-clock"></i></i> 
+              <%= Time.at(event.start_time).strftime('%I:%M %p') %>
+              
+          <!-- Location -->
+              <br>
+              <i class="fas fa-map-marker-alt"></i>
+              <%= event.location %>
+          </p>
+          <!-- Description -->
+          <div class="text-center over-fade" style="height: 10vh;">
+          <p class="card-text "><%= event.description %></p>
+          </div>
+  
+          <!-- Button to Full Event Page -->
+          <%= button_to "View details", event_path(event), :method => "get", class: "btn btn-outline-primary" %>
+  
+        </div>
+      </div>
+    </div>
+    <% end %>
+  
+  </div>
 
-<%= link_to 'New Event', new_event_path %>
+
+
+

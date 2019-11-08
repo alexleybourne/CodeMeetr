@@ -1,5 +1,7 @@
+
 <%= form_with(model: event, local: true) do |form| %>
   <% if event.errors.any? %>
+
     <div id="error_explanation">
       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
@@ -11,62 +13,81 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :cover_image %>
-    <%= form.text_field :cover_image %>
-  </div>
-
-  <div class="field">
-    <%= form.label :host_name %>
-    <%= form.text_field :host_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color %>
-  </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :start_time %>
-    <%= form.number_field :start_time %>
-  </div>
-
+<!-- 
   <div class="field">
     <%= form.label :end_time %>
     <%= form.number_field :end_time %>
-  </div>
+  </div> -->
 
-  <div class="field">
-    <%= form.label :pricing_id %>
-    <%= form.text_field :pricing_id %>
-  </div>
 
-  <div class="field">
-    <%= form.label :promotion_id %>
-    <%= form.text_field :promotion_id %>
-  </div>
+      <div class="mb-3">
+        <label>Event Name</label>
+        <%= form.text_field :title, autofocus: true, class:"form-control", placeholder:"Your Awesome Event" %>
+      </div>
 
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.text_field :user_id %>
-  </div>
+      <div class="mb-3">
+          <label>Event Description</label>
+          <%= form.text_field :description, autofocus: true, class:"form-control", placeholder:"What's your event all about?" %>
+      </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+      <div class="mb-3">
+          <label>Event Host</label>
+          <%= form.text_field :host_name, autofocus: true, class:"form-control", placeholder:"Host Company Name" %>
+      </div>
+
+      <div class="mb-3">
+          <label>Cover Photo url</label>
+          <%= form.text_field :cover_image, autofocus: true, class:"form-control", placeholder:"cute_puppies.jpg" %>
+      </div>
+
+
+      <div class="row">
+          <div class="col-md-6 mb-3">
+            <label>Event Colour</label>
+            <%= form.text_field :color, autofocus: true, class:"form-control", placeholder:"Event Colour" %>
+          </div>
+          <div class="col-md-6 mb-3">
+            <label>Preview</label> <br>
+            <h2 class="btn btn-primary btn-lg btn-opacity">Your Event</h2>
+          </div>
+        </div>
+  
+      <div class="mb-3">
+          <label>Event Colour</label>
+          <%= form.text_field :color, autofocus: true, class:"form-control", placeholder:"Event Colour" %>
+      </div>
+
+      <div class="mb-3">
+          <label>Event Location</label>
+          <%= form.text_field :location, autofocus: true, class:"form-control", placeholder:"The Cool Building" %>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>Start Time</label>
+          <%= form.datetime_field :start_time, class:"form-control" %>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>End Time</label>
+          <%= form.datetime_field :end_time, class:"form-control" %>
+        </div>
+      </div>
+
+
+      <div class="mb-3">
+          <label>Capacity</label>
+          <%= form.text_field :pricing_id, autofocus: true, class:"form-control", placeholder:"20 People" %>
+      </div>
+
+      <div class="mb-3">
+          <label>Promotion</label>
+          <%= form.text_field :promotion_id, autofocus: true, class:"form-control", placeholder:"Promotion" %>
+      </div>
+
+
+        
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Create Event</button>
+
+        
+
+    <% end %>

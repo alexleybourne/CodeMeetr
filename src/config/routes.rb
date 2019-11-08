@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: "pages#index"
 
   get '/events' => 'events#index'
+  get 'my_events' => 'events#your_events'
 
   
 
