@@ -37,8 +37,22 @@ User.create([
         dob: '1999-03-11',
         first_name:'Yura',
         last_name:'Badcoder'
+    },
+    {
+        email: 'leybs02@gmail.com',
+        password:'Password1',
+        password_confirmation:'Password1',
+        dob: '1998-08-11',
+        first_name:'Alex',
+        last_name:'Leybourne'
     }
 ])
+
+
+user = User.find_by(email: "leybs02@gmail.com")
+user.add_role :moderator
+
+
 
 Pricing.create([
     {

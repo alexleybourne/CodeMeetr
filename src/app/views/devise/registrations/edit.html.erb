@@ -1,7 +1,8 @@
 <section class="form-auth text-center">
   <div class="card border-primary mb-3" style="max-width: 50rem; margin: auto;">
     <div class="card-body text-primary text-center">
-      <%= image_tag current_user.profile_image, class: 'rounded-circle big-image'%>
+      <%= image_tag current_user.profile_image, class: 'rounded-circle
+      big-image' if current_user.profile_image.attached?%>
       <br />
       <br />
       <h4>Want to edit your Account <%= current_user.first_name %> ?</h4>
@@ -19,8 +20,7 @@
       </div>
 
       <p>
-        <%= f.label :profile_image %>
-        <%= f.file_field :profile_image %>
+        <%= f.label :profile_image %> <%= f.file_field :profile_image %>
       </p>
 
       <%= f.submit "Clicky" , class:"btn btn-lg btn-primary btn-block" %>
@@ -35,11 +35,11 @@
       <h6>Change your account email:</h6>
 
       <%= form_for(resource, as: resource_name, url:
-      registration_path(resource_name), html: { method: :put }) do |f| %>
+      registration_path(resource_name), html: { method: :put }) do |f2| %>
 
       <div class="field">
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:
-        "form-control", placeholder:"Email" %>
+        <%= f2.email_field :email, autofocus: true, autocomplete: "email",
+        class: "form-control", placeholder:"Email" %>
       </div>
 
       <% end %>
@@ -54,25 +54,25 @@
       <br />
 
       <%= form_for(resource, as: resource_name, url:
-      registration_path(resource_name), html: { method: :put }) do |f| %>
+      registration_path(resource_name), html: { method: :put }) do |f3| %>
 
       <div class="card-footer bg-transparent border-primary"></div>
       <h6>Change Password:</h6>
 
       <div class="field">
-        <%= f.password_field :password, autocomplete: "new-password", class:
+        <%= f3.password_field :password, autocomplete: "new-password", class:
         "form-control", placeholder:"Password (6 characters minimum)" %>
       </div>
       <P>(leave blank if you don't want to change it)</P>
 
       <div class="field">
-        <%= f.password_field :password_confirmation, autocomplete:
+        <%= f3.password_field :password_confirmation, autocomplete:
         "new-password", class: "form-control", placeholder:"Password
         Confirmation" %>
       </div>
 
       <div class="field">
-        <%= f.password_field :current_password, autocomplete:
+        <%= f3.password_field :current_password, autocomplete:
         "current-password", class: "form-control", placeholder:"Your Current
         Password" %>
       </div>

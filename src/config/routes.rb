@@ -5,10 +5,16 @@ Rails.application.routes.draw do
   resources :categories
   resources :pricings
   resources :promotions
-  devise_for :users
   root to: "pages#index"
 
+  Rails.application.routes.draw do
+    devise_for :users, controllers: {
+      registrations: 'users/registrations'
+    }
+  end
+
   get '/events' => 'events#index'
+  # post '/events/redirect', to: 'events#redirect_to_search', as: 'event_search_redirect'
   get 'my_events' => 'events#your_events'
 
   

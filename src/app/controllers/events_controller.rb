@@ -5,6 +5,7 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all
+    @events = Event.where("events.title ILIKE ? ", "%#{params[:query]}%") if params[:query]
   end
 
   # GET /events/1

@@ -4,19 +4,22 @@
   <h1>Events</h1>
 
   <div class="input-group search">
-    <%= form_tag(events_path, method: :get) do %> <%= text_field_tag(:search,
-    params[:search], class:'form-control', placeholder: 'Search for your next event' )%> 
+    <%= form_tag(events_path, method: :get) do %>
+    <%= text_field_tag(:query, params[:query], class:'form-control', placeholder: 'Search for your next event' )%> 
+
+
+      <div class="input-group-append">
+        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
+        <i class="fa fa-search"></i>
+        <% end %>
+      </div>
     <% end %>
-    <div class="input-group-append">
-      <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-      <i class="fa fa-search"></i>
-      <% end %>
-    </div>
   </div>
 </section>
 
 <div class="row-goodness">
-    <% Event.all.each do |event| %>
+  <% if @events.length != 0 %>
+    <% @events.each do |event| %>
     <div class="d-flex justify-content-center" style="padding-top: 1rem; padding-bottom: 1rem;">
       <div class="card text-center" style="max-width: 24vw; position: relative;">
   
@@ -61,8 +64,13 @@
     </div>
     <% end %>
   
-  </div>
+  
+  <% else %>
+<h4>
+  BOOMER TIME
+</h4>
+  <%end%>
 
-
+</div>
 
 

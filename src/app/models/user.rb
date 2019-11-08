@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :promotions, through: :owned_events
 
   has_and_belongs_to_many :events
+  has_and_belongs_to_many :roles, :join_table => :users_roles
   has_one_attached :profile_image
 
   validates :dob, presence: true
@@ -17,10 +18,24 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   
   validate :password_complexity
+
+
+  rolify :before_add => :before_add_method
+  after_create :assign_default_role
   
   def password_complexity
     return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$/
 
     errors.add :password, 'Password complexity requirement not met.'
   end
+
+  
+  def before_add_method(role)
+    # do something before it gets added
+  end
+
+  def assign_default_role
+    self.add_role(:normal_user) if self.roles.blank?
+  end
+
 end

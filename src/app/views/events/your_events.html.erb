@@ -1,33 +1,84 @@
 <section class=" text-center">
-<h1> Your Events </h1>
+  <h1>Your Events</h1>
 
-<section class="form-auth text-center">
-        <div class="card border-primary mb-3" style="max-width: 28rem; margin: auto;">
-            <div class="card-body text-primary text-center">
-                <h1> Looks like you don't have any.. <i class="far fa-frown-open"></i> </h1>
-                <div>
-                <br>
-                <div class="card-footer bg-transparent border-primary"></div>
-                <p style="font-size: 14px;"> Why don't you have a look at all the amazing events happening around you</p>
-                <%= button_to "View Events", '/events', class: "btn btn-primary" %>
-                <br>
-                <p style="font-size: 14px"> Don't want to follow the crowd? Create your own event!</p>
-                <%= button_to "Create an Event", '/events/new', class: "btn btn-primary" %>
-                </div>
-            </div>
+  <% if current_user.owned_events.length == 0 %>
+
+  <section class="form-auth text-center">
+    <div
+      class="card border-primary mb-3"
+      style="max-width: 28rem; margin: auto;"
+    >
+      <div class="card-body text-primary text-center">
+        <h1>
+          Looks like you don't have any.. <i class="far fa-frown-open"></i>
+        </h1>
+        <div>
+          <br />
+          <div class="card-footer bg-transparent border-primary"></div>
+          <p style="font-size: 14px;">
+            Why don't you have a look at all the amazing events happening around
+            you
+          </p>
+          <%= link_to "View Events", '/events', class: "btn btn-primary" %>
+          <br>
+          <br>
+          <p style="font-size: 14px">
+            Don't want to follow the crowd? Create your own event!
+          </p>
+          <%= link_to "Create an Event", '/events/new', class: "btn
+          btn-primary" %>
         </div>
-</section>
+      </div>
+    </div>
+  </section>
 
-
-
-<% if %>
-
-    
-
-<% else %>
-
-<% end %>
-
-
-
+  <% else %> 
+  
+  <div class="row-goodness">
+        <% current_user.owned_events.each do |event| %>
+        <div class="d-flex justify-content-center" style="padding-top: 1rem; padding-bottom: 1rem;">
+          <div class="card text-center" style="max-width: 24vw; position: relative;">
+      
+            <h3 style=" position: absolute; top: 25%;
+            left: 50%; transform: translate(-50%, -50%);" class="btn btn-<%=event.color %> btn-lg btn-opacity">
+              <%= event.title %></h3>
+      
+            <img
+              class="card-img-top" style="height: 28vh;"
+              src="<%= event.cover_image %>"
+              alt="Card image cap"
+            />
+      
+            <div class="card-body" >
+      
+              <p style="font-size: 12px;">
+                  <!-- Date converted from Unix -->
+                  <i class="far fa-calendar-alt"></i> 
+                  <%= Time.at(event.start_time).strftime('%a-%d-%b-%Y') %>
+                  &nbsp; &nbsp;
+      
+              <!-- Time converted from Unix -->
+      
+                  <i class="far fa-clock"></i></i> 
+                  <%= Time.at(event.start_time).strftime('%I:%M %p') %>
+                  
+              <!-- Location -->
+                  <br>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <%= event.location %>
+              </p>
+              <!-- Description -->
+              <div class="text-center over-fade" style="height: 10vh;">
+              <p class="card-text "><%= event.description %></p>
+              </div>
+      
+              <!-- Button to Full Event Page -->
+              <%= button_to "View details", event_path(event), :method => "get", class: "btn btn-outline-primary" %>
+      
+            </div>
+          </div>
+        </div>
+    <% end %>
+  
+  <% end %>
 </section>
