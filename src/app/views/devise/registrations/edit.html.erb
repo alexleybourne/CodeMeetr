@@ -1,11 +1,7 @@
 <section class="form-auth text-center">
   <div class="card border-primary mb-3" style="max-width: 50rem; margin: auto;">
     <div class="card-body text-primary text-center">
-      <img
-        class="rounded-circle big-image"
-        src="<%= current_user.profile_image %>"
-        data-holder-rendered="true"
-      />
+      <%= image_tag current_user.profile_image, class: 'rounded-circle big-image'%>
       <br />
       <br />
       <h4>Want to edit your Account <%= current_user.first_name %> ?</h4>
@@ -22,19 +18,24 @@
         <%= render "devise/shared/error_messages", resource: resource %>
       </div>
 
-      <div class="field">
-        <%= f.text_field :profile_image, autofocus: true, autocomplete:
-        "profile_image", class: "form-control", placeholder:"profile picture
-        link" %>
-      </div>
+      <p>
+        <%= f.label :profile_image %>
+        <%= f.file_field :profile_image %>
+      </p>
+
+      <%= f.submit "Clicky" , class:"btn btn-lg btn-primary btn-block" %>
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Update
       </button>
       <br />
 
+      <% end %>
       <div class="card-footer bg-transparent border-primary"></div>
       <h6>Change your account email:</h6>
+
+      <%= form_for(resource, as: resource_name, url:
+      registration_path(resource_name), html: { method: :put }) do |f| %>
 
       <div class="field">
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class:

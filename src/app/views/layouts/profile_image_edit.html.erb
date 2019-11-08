@@ -1,0 +1,35 @@
+<section class="form-auth text-center">
+    <div class="card border-primary mb-3" style="max-width: 50rem; margin: auto;">
+      <div class="card-body text-primary text-center">
+        <%= image_tag current_user.profile_image, class: 'rounded-circle big-image'%>
+        <br />
+        <br />
+        <h4>Want to edit your Account <%= current_user.first_name %> ?</h4>
+        <br />
+  
+        <div class="card-footer bg-transparent border-primary"></div>
+  
+        <h6>Change your profile picture:</h6>
+  
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  
+        <div class="s_errors">
+          <%= render "devise/shared/error_messages", resource: resource %>
+        </div>
+  
+        <p>
+          <%= f.label :profile_image %>
+          <%= f.file_field :profile_image %>
+        </p>
+  
+        <%= f.submit "Clicky" , class:"btn btn-lg btn-primary btn-block" %>
+  
+        
+  
+        <% end %>
+        
+        <br />
+        <%= link_to "Back", :back %>
+      </div>
+    </div>
+  </section>

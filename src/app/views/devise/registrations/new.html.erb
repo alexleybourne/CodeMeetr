@@ -10,6 +10,11 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       </div>
 
+      <p>
+        <%= f.label :profile_image %>
+        <%= f.file_field :profile_image %>
+      </p>
+
       <div class="field">
         <%= f.text_field :first_name, autofocus: true, class: "form-control", required: true, placeholder:"First name" %>
       </div>

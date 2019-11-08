@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :promotions, through: :owned_events
 
   has_and_belongs_to_many :events
+  has_one_attached :profile_image
 
   validates :dob, presence: true
   validates :first_name, presence: true

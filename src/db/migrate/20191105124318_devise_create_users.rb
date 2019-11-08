@@ -19,7 +19,6 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :first_name,              null: false
       t.string :last_name,               null: false
       t.date :dob,                       null: false
-      t.string :profile_image
 
 
       ## Trackable

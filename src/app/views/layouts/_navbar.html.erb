@@ -32,8 +32,8 @@
     <ul class="nav navbar-nav justify-content-end">
             <div class="dropdown">
                     <button class="btn btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <img class="rounded-circle nav-image" src="<%= current_user.profile_image %>"
-                            data-holder-rendered="true">
+                            <%= image_tag current_user.profile_image, class: 'rounded-circle nav-image'%>
+                          
 
                             
 
