@@ -10,10 +10,36 @@
       <%= render "devise/shared/error_messages", resource: resource %>
       </div>
 
-      <p>
-        <%= f.label :profile_image %>
-        <%= f.file_field :profile_image %>
-      </p>
+
+      <!-- Profile Pic Preview -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+      <img id="blah" src="#" alt="" class="rounded-circle big-image"/>
+    
+        <%= f.file_field :profile_image, id:"imgInp", class:"btn btn-block", style: "position: fixed; opacity:0%;" %>
+        <button class="btn btn-outline-primary btn-block"> Profile picture upload &nbsp;<i class="fas fa-file-upload"></i> </button>
+
+
+      
+      <!-- Image Preview -->
+      <script>
+                function readURL(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+              $('#blah').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+
+        $("#imgInp").change(function() {
+          readURL(this);
+        });
+      </script>
 
       <div class="field">
         <%= f.text_field :first_name, autofocus: true, class: "form-control", required: true, placeholder:"First name" %>
@@ -51,8 +77,8 @@
 
   </div>
 
-        </div>
-        </div>
+        </p>
+        </p>
 
 
 </section>
