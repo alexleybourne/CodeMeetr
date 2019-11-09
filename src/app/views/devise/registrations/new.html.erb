@@ -15,13 +15,12 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 
-      <img id="blah" src="#" alt="" class="rounded-circle big-image"/>
-    
-        <%= f.file_field :profile_image, id:"imgInp", class:"btn btn-block", style: "position: fixed; opacity:0%;" %>
-        <button class="btn btn-outline-primary btn-block"> Profile picture upload &nbsp;<i class="fas fa-file-upload"></i> </button>
 
-
-      
+      <img id="imgp" src="#" alt="" class="rounded-circle big-image"/>
+      <br>
+      <p style="border-radius: 2px; font-size: 14px;" >
+          <%= f.label 'Upload Profile Image:'%> <%= f.file_field :profile_image, class:"btn btn-outline-primary btn-block", id:"imgInp" %>
+        </p>
       <!-- Image Preview -->
       <script>
                 function readURL(input) {
@@ -29,7 +28,7 @@
             var reader = new FileReader();
             
             reader.onload = function(e) {
-              $('#blah').attr('src', e.target.result);
+              $('#imgp').attr('src', e.target.result);
             }
             
             reader.readAsDataURL(input.files[0]);

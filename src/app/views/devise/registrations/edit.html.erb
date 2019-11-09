@@ -19,11 +19,34 @@
         <%= render "devise/shared/error_messages", resource: resource %>
       </div>
 
-      <p>
-        <%= f.label :profile_image %> <%= f.file_field :profile_image %>
-      </p>
+     <!-- Profile Pic Preview -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-      <%= f.submit "Clicky" , class:"btn btn-lg btn-primary btn-block" %>
+
+
+      <img id="imgp" src="#" alt="" class="rounded-circle big-image"/>
+      <br>
+      <p style="border-radius: 2px; font-size: 14px;" >
+          <%= f.label 'Upload Profile Image:'%> <%= f.file_field :profile_image, class:"btn btn-outline-primary btn-block", id:"imgInp" %>
+        </p>
+      <!-- Image Preview -->
+      <script>
+                function readURL(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+              $('#imgp').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+
+        $("#imgInp").change(function() {
+          readURL(this);
+        });
+      </script>
 
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Update

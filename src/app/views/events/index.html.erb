@@ -31,11 +31,13 @@
           style="font-weight: 300; font-size: 14px; color: white; position: absolute; top: 25%;
           left: 50%; transform: translate(-50%, 180%);">
           Going <i class="fas fa-check"></i></p>
-          <% elsif (current_user.owned_events.include?(event)) %>
-          <p class="btn btn-primary"
-          style="font-weight: 300; font-size: 14px; color: white; position: absolute; top: 25%;
-          left: 50%; transform: translate(-50%, 180%);">
-          Your Event <i class="fas fa-edit"></i></p>
+          <% elsif user_signed_in? %>
+          <% if (current_user.owned_events.include?(event)) %>
+            <p class="btn btn-primary"
+            style="font-weight: 300; font-size: 14px; color: white; position: absolute; top: 25%;
+            left: 50%; transform: translate(-50%, 180%);">
+            Your Event <i class="fas fa-edit"></i></p>
+            <% end %>
           <% end %>
   
   <% if event.cover_image.nil? || event.cover_image.empty?  %>

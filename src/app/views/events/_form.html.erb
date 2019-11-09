@@ -35,11 +35,34 @@
           <%= form.text_field :host_name, autofocus: true, class:"form-control", placeholder:"Host Company Name" %>
       </div>
 
-      <div class="mb-3">
-          <label>Cover Photo url</label>
-          <%= form.text_field :cover_image, autofocus: true, class:"form-control", placeholder:"cute_puppies.jpg" %>
-      </div>
+      <!-- Profile Pic Preview -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
+
+
+      <img id="imgp" src="#" alt="" class="big-image-cover"/>
+      <br>
+      <p style="border-radius: 2px; font-size: 14px;" >
+          <%= form.label 'Upload Event Image:'%> <%= form.file_field :event_image, class:"btn btn-outline-primary btn-block", id:"imgInp" %>
+        </p>
+      <!-- Image Preview -->
+      <script>
+                function readURL(input) {
+          if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+              $('#imgp').attr('src', e.target.result);
+            }
+            
+            reader.readAsDataURL(input.files[0]);
+          }
+        }
+
+        $("#imgInp").change(function() {
+          readURL(this);
+        });
+      </script>
   
       <div class="mb-3">
           <label>Event Colour</label><br>
