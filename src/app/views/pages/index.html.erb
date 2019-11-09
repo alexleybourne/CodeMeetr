@@ -38,7 +38,7 @@
   
 <!-- Render for each event -->
 <div class="row-goodness">
-  <% Event.all.each do |event| %>
+  <% Event.all.sort_by(&:priority).reverse.each do |event| %>
   <div class="d-flex justify-content-center" style="padding-top: 1rem; padding-bottom: 1rem;">
     <div class="card text-center" style="max-width: 24vw; position: relative;">
 
@@ -61,22 +61,26 @@
           <% end %>
 
           
-          <% if event.cover_image.nil? || event.cover_image.empty?  %>
-          
-              <img
-              class="card-img-top" style="height: 28vh;"
-              src="https://res.cloudinary.com/djic27lvo/image/upload/v1573313894/photo-1542831371-29b0f74f9713_yqiuw4.jpg"
-              alt="Card image cap"
-            />
+          <% if event.top_image.attached?   %>
+
+          <%= image_tag event.top_image, class: "card-img-top", style:"height: 28vh;"  %>
+        
+          <% elsif event.cover_image.nil? || event.cover_image.empty? %>
+              
+          <img
+          class="card-img-top" style="height: 28vh;"
+          src="https://res.cloudinary.com/djic27lvo/image/upload/v1573313894/photo-1542831371-29b0f74f9713_yqiuw4.jpg"
+          alt="Card image cap"
+          />
 
           <% else %>
-          
+              
               <img
             class="card-img-top" style="height: 28vh;"
             src="<%= event.cover_image %>"
             alt="Card image cap"
           />
-          
+
           <% end %>
           
 

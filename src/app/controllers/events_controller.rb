@@ -42,7 +42,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
-    @event.top_image.attach(params[:event][:top_image])
+    @event.top_image.attach(params[:event][:top_image]) if params[:event][:top_image]
     @event.save
     respond_to do |format|
       if @event.update(event_params)

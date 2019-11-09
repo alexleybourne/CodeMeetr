@@ -1,4 +1,6 @@
 module DeviseHelper
+
+  # Better devise errors etc.
     def devise_error_messages!
       return '' if resource.errors.empty?
   

@@ -11,28 +11,27 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :events
   has_and_belongs_to_many :roles, :join_table => :users_roles
+
+  # Cloudinary Fun times
   has_one_attached :profile_image
 
+  # Validations for signup
   validates :dob, presence: true
   validates :first_name, presence: true
   validates :last_name, presence: true
   
   validate :password_complexity
 
-
-  rolify :before_add => :before_add_method
+  # Every user gets a default role ( I am the only admin soz )
   after_create :assign_default_role
   
+  # Testing password complexity for dat securitayyy
   def password_complexity
     return if password.blank? || password =~ /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,20}$/
 
     errors.add :password, 'Password complexity requirement not met.'
   end
 
-  
-  def before_add_method(role)
-    # do something before it gets added
-  end
 
   def assign_default_role
     self.add_role(:normal_user) if self.roles.blank?

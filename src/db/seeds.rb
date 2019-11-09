@@ -1,10 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+#These are all my seedlings db:reset to watch them sprout
 
 Image.destroy_all
 Event.destroy_all
@@ -116,7 +110,7 @@ User.first.owned_events.create([
         promotion: Promotion.all[1],
         title: 'John can Code',
         description: "I'm telling you guys I know how to code! I can hear you all at the water coolers laughing about how I can't even write html but I can!
-        Come to my event and I will prove it to you. For a small entry fee of $10 at the door. Then I will completely destroy you with all my coding knowledge. Suck it Jannet.",
+        Come to my event and I will prove it to you. For a small entry fee of $10 at the door. Then I will completely destroy you with all my coding knowledge.",
         cover_image: "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1382&q=80",
         host_name: "Johns Company",
         color: "primary",
