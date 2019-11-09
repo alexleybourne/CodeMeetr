@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   # post '/events/redirect', to: 'events#redirect_to_search', as: 'event_search_redirect'
   get 'my_events' => 'events#your_events'
 
+  post 'event/:id/join', to: 'events#join', as: 'join_event' 
+
   
 
   

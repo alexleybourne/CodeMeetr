@@ -1,18 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 
 <div class="text-center jumbotron image-bg " style="background: url(<%= @event.cover_image %>)
-  center center no-repeat;">
+  center center">
     <div class="eventimage-gradient"
     ></div>
 
     
     <h3
       class="btn btn-<%=@event.color %>"
-      style="font-weight: bold; font-size: 10vw; color: white; position: relative;"
+      style="font-weight: bold; font-size: 50px; color: white; position: relative;"
     >
     <%= @event.title %>
     </h3>
+    <br>
     <p
 
     class="btn btn-<%=@event.color %>"
@@ -78,26 +77,30 @@
       <%= link_to 'Edit Your Event', edit_event_path(@event) %>
       </div>
 
-
-      <% else %>
+    <% elsif (@event.users.include?(current_user)) %>
       
-        <% if (@event.capacity) <= (@event.users.count) %>
+
+      <p class="psmall"> You're already going! </p>
+      <%= button_to "  Leave  ", join_event_path(@event), :method => "post", class: "btn btn-danger btn-lrg", style: "font-size: 36px;" %>
+    
+
+    <% elsif (@event.capacity) <= (@event.users.count) %>
 
         <p class="psmall" style="color:red;"><%= (@event.capacity) - (@event.users.count) %> The Event is Full!</p>
         <button type="button" class="btn btn-lg btn-danger" style="font-size: 36px;" disabled>  &nbsp&nbsp&nbsp&nbsp  Full  &nbsp&nbsp&nbsp&nbsp  </button>
-        <% else %>
-
-        <p class="psmall"><%= (@event.capacity) - (@event.users.count) %> Spots Left!</p>
-        <%= button_to "  Attend  ", event_path(@event), :method => "get", class: "btn btn-primary btn-lrg", style: "font-size: 36px;" %>
         
-        <% end %>
-
-      <% end %>
+    <% else %>
+          
+        <p class="psmall"><%= (@event.capacity) - (@event.users.count) %> Spots Left!</p>
+        <%= button_to "  Attend  ", join_event_path(@event), :method => "post", class: "btn btn-primary btn-lrg", style: "font-size: 36px;" %>
+    <% end %>
 
     <br>
     <%= link_to 'Back', @events_path, class: "btn btn-outline-primary" %>
 </div>
 </div>
+
+
 
 
 

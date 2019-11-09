@@ -62,6 +62,16 @@ class EventsController < ApplicationController
     end
   end
 
+  # Join Event
+  def join
+    event = Event.find(params[:id])
+    if event.users.length < event.capacity
+      event.users << current_user
+      event.save
+      redirect_to event, notice: 'You are now going to the event!'
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
