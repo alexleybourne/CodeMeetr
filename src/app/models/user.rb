@@ -32,9 +32,4 @@ class User < ApplicationRecord
     errors.add :password, 'Password complexity requirement not met.'
   end
 
-
-  def assign_default_role
-    self.add_role(:normal_user) if self.roles.blank?
-  end
-
 end

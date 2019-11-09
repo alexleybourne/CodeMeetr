@@ -42,10 +42,8 @@ User.create([
     }
 ])
 
-
-user = User.find_by(email: "leybs02@gmail.com")
-user.add_role :moderator
-
+Role.create!(name: 'normal_user')
+Role.create!(name: 'admin')
 
 
 Pricing.create([
@@ -195,7 +193,7 @@ user.owned_events.create([
         location: "The lock Store",
         start_time: Time.now,
         end_time: Time.now.advance(days: 1),
-        users: User.all,
+        users: User.all[0,2],
         categories: Category.all
     },
     {
@@ -209,7 +207,7 @@ user.owned_events.create([
         location: "River City Labs Kitchen",
         start_time: Time.now.advance(days: 3),
         end_time: Time.now.advance(days: 4),
-        users: User.all,
+        users: User.all[1, 2],
         categories: [Category.all[0]]
     }
 ])
