@@ -69,6 +69,13 @@
             <br>
             <i class="fas fa-map-marker-alt"></i>
             <%= event.location %>
+            &nbsp; &nbsp;
+
+        <!-- Attending -->
+            <i class="fas fa-users"></i>&nbsp;
+            <%= event.users.count %>  / <%= event.capacity %> Attending
+          
+
         </p>
         <!-- Description -->
         <div class="text-center over-fade" style="height: 10vh;">

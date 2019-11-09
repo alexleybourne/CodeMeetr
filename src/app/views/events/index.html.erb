@@ -3,18 +3,18 @@
 <section class="text-center">
   <h1>Events</h1>
 
-  <div class="input-group search">
+  
+  <div class="mb-4" style="max-width: 60vw; margin: auto;">
     <%= form_tag(events_path, method: :get) do %>
-    <%= text_field_tag(:query, params[:query], class:'form-control', placeholder: 'Search for your next event' )%> 
-
-
-      <div class="input-group-append">
-        <%= button_tag(type: "submit", class: "btn btn-primary") do %>
-        <i class="fa fa-search"></i>
-        <% end %>
-      </div>
+    <div class="input-group-append">
+      <%= text_field_tag(:query, params[:query], class:'form-control', placeholder: 'Search for your next event' )%>
+      
+      <button id="button-addon5" type="submit" class="btn btn-primary" style="position: absolute; left: 78%"><i class="fa fa-search"></i></button>
+    </div>
     <% end %>
   </div>
+
+
 </section>
 
 <div class="row-goodness">
@@ -57,6 +57,12 @@
               <br>
               <i class="fas fa-map-marker-alt"></i>
               <%= event.location %>
+              &nbsp; &nbsp;
+
+          <!-- Attending -->
+            <i class="fas fa-users"></i>&nbsp;
+            <%= event.users.count %>  / <%= event.capacity %> Attending
+          
           </p>
           <!-- Description -->
           <div class="text-center over-fade" style="height: 10vh;">
