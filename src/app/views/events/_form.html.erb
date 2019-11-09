@@ -114,17 +114,17 @@
       </div>
 
 
-      <div class="mb-3">
-          <label>Capacity</label>
-          <%= form.text_field :pricing_id, autofocus: true, class:"form-control", placeholder:"20 People" %>
-      </div>
-
-      <div class="mb-3">
-          <label>Promotion</label>
-          <%= form.text_field :promotion_id, autofocus: true, class:"form-control", placeholder:"Promotion" %>
-      </div>
-
-
+      <div class="row">
+          <div class="col-md-6 mb-3">
+              <label>Capacity</label>
+              <%= form.select :pricing_id, options_for_select(Pricing.all.map{ |pricing| "Capacity: #{pricing.capacity} - $#{pricing.price}" }.zip(Pricing.all.map(&:id))), {}, {value: Pricing.first.id, class:"form-control"} %>
+            </div>
+          <div class="col-md-6 mb-3">
+              <label>Promotion</label>
+              <%= form.select :promotion_id, options_for_select(Promotion.all.map{ |promotion| "Priority: #{promotion.priority} - $#{promotion.price}" }.zip(Promotion.all.map(&:id))), {}, {value: Promotion.first.id, class:"form-control"} %>
+            </div>
+        </div>
+      <br>
       <% :user_id == current_user.id %>
 
         
