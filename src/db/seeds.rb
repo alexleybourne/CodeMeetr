@@ -180,3 +180,36 @@ User.first.owned_events.create([
     }
     
 ])
+
+user = User.find_by(email: "leybs02@gmail.com")
+user.owned_events.create([
+    {
+        pricing: Pricing.all[0],
+        promotion: Promotion.all[1],
+        title: 'Time Management 101',
+        description: "When I had my life hit the fan the first thing I thought was good thing I planned to use this last week to do majority of my assignment. JK! I wish I had started form the begining, which would have reduced my stress by 2,000 percent.
+        anyways in this event I will teach you how to manage your time better than myself, but then probably go do it again next assessment.",
+        cover_image: "https://images.unsplash.com/photo-1550534791-2677533605ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+        host_name: "Time Travelers Inc.",
+        color: "dark",
+        location: "The lock Store",
+        start_time: Time.now,
+        end_time: Time.now.advance(days: 1),
+        users: User.all,
+        categories: Category.all
+    },
+    {
+        pricing: Pricing.all[2],
+        promotion: Promotion.all[3],
+        title: 'Free Food!',
+        description: "River city labs kitchen is magic! their fridge always fills up with new and different food! Just rockup and we'll have a small free feast and chat code and whatever else you want. Just don't eat the sandwhiches named Kevin, I have dibs on them.",
+        cover_image: "https://images.unsplash.com/photo-1536353284924-9220c464e262?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1651&q=80",
+        host_name: "One Hungry Coder",
+        color: "warning",
+        location: "River City Labs Kitchen",
+        start_time: Time.now.advance(days: 3),
+        end_time: Time.now.advance(days: 4),
+        users: User.all,
+        categories: [Category.all[0]]
+    }
+])
