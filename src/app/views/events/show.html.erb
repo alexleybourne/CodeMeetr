@@ -53,11 +53,15 @@
         <i class="fas fa-map-marker-alt"></i>&nbsp;
         <%= @event.location %>
       </p>
-    </p>
-
+   
 
     <!-- Attendees -->
-     <%= @event.pricing.price %>  /     <%= @event.capacity %>
+    <p class="btn btn-outline-dark">
+        <i class="fas fa-users"></i>&nbsp;
+        <%= @event.users.count %>  / <%= @event.capacity %> Attending
+      </p>
+    </p>
+     </p>
 
 
     <!-- Description -->
@@ -76,10 +80,17 @@
 
 
       <% else %>
+      
+        <% if (@event.capacity) <= (@event.users.count) %>
 
+        <p class="psmall" style="color:red;"><%= (@event.capacity) - (@event.users.count) %> The Event is Full!</p>
+        <button type="button" class="btn btn-lg btn-danger" style="font-size: 36px;" disabled>  &nbsp&nbsp&nbsp&nbsp  Full  &nbsp&nbsp&nbsp&nbsp  </button>
+        <% else %>
 
-
-      <p> This aint yours</p>
+        <p class="psmall"><%= (@event.capacity) - (@event.users.count) %> Spots Left!</p>
+        <%= button_to "  Attend  ", event_path(@event), :method => "get", class: "btn btn-primary btn-lrg", style: "font-size: 36px;" %>
+        
+        <% end %>
 
       <% end %>
 
@@ -87,9 +98,6 @@
     <%= link_to 'Back', @events_path, class: "btn btn-outline-primary" %>
 </div>
 </div>
-
-    <!-- Button to Full @event Page -->
-    <%= button_to "View details", event_path(@event), :method => "get", class: "btn btn-outline-primary" %>
 
 
 
