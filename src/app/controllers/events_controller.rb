@@ -68,8 +68,16 @@ class EventsController < ApplicationController
     if event.users.length < event.capacity
       event.users << current_user
       event.save
-      redirect_to event, notice: 'You are now going to the event!'
+      redirect_to event, notice: 'You are now going to the Event!'
     end
+  end
+
+  # leave Event
+  def leave
+    event = Event.find(params[:id])
+      event.users.delete(current_user)
+      event.save
+      redirect_to event, notice: 'You have been removed from the Event!'
   end
 
   private

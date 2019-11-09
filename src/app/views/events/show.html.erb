@@ -86,7 +86,7 @@
       
 
       <p class="psmall"> You're already going! </p>
-      <%= button_to "  Leave  ", join_event_path(@event), :method => "post", class: "btn btn-danger btn-lrg", style: "font-size: 36px;" %>
+      <%= button_to "  Leave  ", leave_event_path(@event), :method => "post", class: "btn btn-danger btn-lrg", style: "font-size: 36px;" %>
     
 
     <% elsif (@event.capacity) <= (@event.users.count) %>

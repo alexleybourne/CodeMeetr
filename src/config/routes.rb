@@ -19,6 +19,8 @@ Rails.application.routes.draw do
 
   post 'event/:id/join', to: 'events#join', as: 'join_event' 
 
+  post 'event/:id/leave', to: 'events#leave', as: 'leave_event'
+
   
 
   
