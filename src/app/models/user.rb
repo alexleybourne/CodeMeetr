@@ -22,8 +22,6 @@ class User < ApplicationRecord
   
   validate :password_complexity
 
-  # Every user gets a default role ( I am the only admin soz )
-  after_create :assign_default_role
   
   # Testing password complexity for dat securitayyy
   def password_complexity
