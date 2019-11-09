@@ -1,13 +1,18 @@
 
-<% if @event.cover_image.nil? || @event.cover_image.empty?  %>
+<% if @event.top_image.attached? %>
 
-<div class="text-center jumbotron image-bg " style="background: url(https://res.cloudinary.com/djic27lvo/image/upload/v1573313894/photo-1542831371-29b0f74f9713_yqiuw4.jpg)
+<div class="text-center jumbotron image-bg " style="background: url(<%= url_for(@event.top_image) %>)
+    center center">
+
+<% elsif @event.cover_image.nil? || @event.cover_image.empty?  %>
+
+<div class="text-center jumbotron image-bg " style="background: url(<%= url_for(@event.cover_image) %>)
     center center">
 
 <% else %>
 
-<div class="text-center jumbotron image-bg " style="background: url(<%= @event.cover_image %>)
-  center center">
+<div class="text-center jumbotron image-bg " style="background: url(https://res.cloudinary.com/djic27lvo/image/upload/v1573313894/photo-1542831371-29b0f74f9713_yqiuw4.jpg)
+    center center">
 
 <% end %>
 

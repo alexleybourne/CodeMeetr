@@ -5,7 +5,7 @@
     
 <h1>Editing Event</h1>
 
-<%= render 'form', event: @event %>
+<%= render 'form', event: @event, method_type: 'patch' %>
 
 <%= link_to 'Show', @event %> |
 <%= link_to 'Back', events_path %>

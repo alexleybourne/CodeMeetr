@@ -1,5 +1,5 @@
 
-<%= form_with(model: event, local: true) do |form| %>
+<%= form_with(model: event, local: true, method: method_type || 'post') do |form| %>
   <% if event.errors.any? %>
 
     <div id="error_explanation">
@@ -43,7 +43,7 @@
       <img id="imgp" src="#" alt="" class="big-image-cover"/>
       <br>
       <p style="border-radius: 2px; font-size: 14px;" >
-          <%= form.label 'Upload Event Image:'%> <%= form.file_field :event_image, class:"btn btn-outline-primary btn-block", id:"imgInp" %>
+          <%= form.label 'Upload Event Image:'%> <%= form.file_field :top_image, class:"btn btn-outline-primary btn-block", id:"imgInp" %>
         </p>
       <!-- Image Preview -->
       <script>

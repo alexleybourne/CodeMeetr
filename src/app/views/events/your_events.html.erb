@@ -54,14 +54,18 @@
           Your Event <i class="fas fa-edit"></i></p>
           <% end %>
       
-              <% if event.cover_image.nil? || event.cover_image.empty?  %>
+              <% if event.top_image.attached?   %>
 
+              <%= image_tag event.top_image, class: "card-img-top", style:"height: 28vh;"  %>
+            
+              <% elsif event.cover_image.nil? || event.cover_image.empty? %>
+                  
               <img
               class="card-img-top" style="height: 28vh;"
               src="https://res.cloudinary.com/djic27lvo/image/upload/v1573313894/photo-1542831371-29b0f74f9713_yqiuw4.jpg"
               alt="Card image cap"
               />
-            
+
               <% else %>
                   
                   <img
