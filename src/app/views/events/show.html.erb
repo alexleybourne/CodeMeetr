@@ -1,6 +1,16 @@
 
+<% if @event.cover_image.nil? || @event.cover_image.empty?  %>
+
+<div class="text-center jumbotron image-bg " style="background: url(https://res.cloudinary.com/djic27lvo/image/upload/v1573313894/photo-1542831371-29b0f74f9713_yqiuw4.jpg)
+    center center">
+
+<% else %>
+
 <div class="text-center jumbotron image-bg " style="background: url(<%= @event.cover_image %>)
   center center">
+
+<% end %>
+
     <div class="eventimage-gradient"
     ></div>
 
@@ -73,13 +83,18 @@
     
 
     <br>
-    <% if current_user.id == @event.user_id %>
+    <% if !user_signed_in? %>
+
+    <p class="psmall" style="color:red;"> Please Log In to Attend Event</p>
+    <%= button_to "Log In", new_user_session_path, class: "btn btn-primary btn-lrg", style: "font-size: 30px;"%>
+
+    <% elsif current_user.id == @event.user_id %>
 
       <div>
       <p> Current Event Cost: $<%= @event.pricing.price %> </p>
       <p> Current Event Promotion Cost:  $<%= @event.promotion.price %> </p>
       <p>  </p>
-      <%= link_to 'Edit Your Event', edit_event_path(@event) %>
+      <%= button_to 'Edit Your Event', edit_event_path(@event), :method => "get", class: "btn btn-primary btn-lrg", style: "font-size: 30px;" %>
       </div>
 
     <% elsif (@event.users.include?(current_user)) %>

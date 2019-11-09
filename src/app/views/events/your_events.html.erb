@@ -42,12 +42,35 @@
             <h3 style=" position: absolute; top: 25%;
             left: 50%; transform: translate(-50%, -50%);" class="btn btn-<%=event.color %> btn-lg btn-opacity">
               <%= event.title %></h3>
+              <% if (event.users.include?(current_user)) %>
+          <p class="btn btn-success"
+          style="font-weight: 300; font-size: 14px; color: white; position: absolute; top: 25%;
+          left: 50%; transform: translate(-50%, 180%);">
+          Going <i class="fas fa-check"></i></p>
+          <% elsif (current_user.owned_events.include?(event)) %>
+          <p class="btn btn-primary"
+          style="font-weight: 300; font-size: 14px; color: white; position: absolute; top: 25%;
+          left: 50%; transform: translate(-50%, 180%);">
+          Your Event <i class="fas fa-edit"></i></p>
+          <% end %>
       
-            <img
+              <% if event.cover_image.nil? || event.cover_image.empty?  %>
+
+              <img
               class="card-img-top" style="height: 28vh;"
-              src="<%= event.cover_image %>"
+              src="https://res.cloudinary.com/djic27lvo/image/upload/v1573313894/photo-1542831371-29b0f74f9713_yqiuw4.jpg"
               alt="Card image cap"
-            />
+              />
+            
+              <% else %>
+                  
+                  <img
+                class="card-img-top" style="height: 28vh;"
+                src="<%= event.cover_image %>"
+                alt="Card image cap"
+              />
+                  
+              <% end %>
       
             <div class="card-body" >
       
