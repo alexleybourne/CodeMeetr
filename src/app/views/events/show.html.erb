@@ -12,15 +12,20 @@
     <%= @event.title %>
     </h3>
     <br>
-    <p
 
-    class="btn btn-<%=@event.color %>"
+    <p class="btn btn-<%=@event.color %>"
     style="font-weight: 300; font-size: 20px; color: white;"
     >
       Hosted by:
       <%= @event.host_name %></p>
     <br />
     
+    <% if (@event.users.include?(current_user)) %>
+    <p class="btn btn-success"
+        style="font-weight: 300; font-size: 20px; color: white;"
+        >
+          Going <i class="fas fa-check"></i></p>
+    <% end %>
 
 </div>
 <div class="card text-center">

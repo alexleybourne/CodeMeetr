@@ -26,6 +26,13 @@
         <h3 style=" position: absolute; top: 25%;
         left: 50%; transform: translate(-50%, -50%);" class="btn btn-<%=event.color %> btn-lg btn-opacity">
           <%= event.title %></h3>
+
+          <% if (event.users.include?(current_user)) %>
+          <p class="btn btn-success"
+          style="font-weight: 300; font-size: 14px; color: white; position: absolute; top: 25%;
+          left: 50%; transform: translate(-50%, 180%);">
+          Going <i class="fas fa-check"></i></p>
+          <% end %>
   
         <img
           class="card-img-top" style="height: 28vh;"
