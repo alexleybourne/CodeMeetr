@@ -1,6 +1,6 @@
 ﻿# T2A2 - Marketplace Project :rocket:
 
-![CodeMeetr Logo](https://github.com/alexleybourne/CodeMeetr/blob/master/graphics/CodeMeetr_logo.png?raw=true)
+![CodeMeetr Logo](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/CodeMeetr_logo.png?raw=true)
 
 Personal Portfolio Assessment @ [Coder Academy](https://coderacademy.edu.au/)
 
