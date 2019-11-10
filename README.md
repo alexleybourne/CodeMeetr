@@ -14,6 +14,29 @@ Visit the site:
 Source code: 
 [Here](https://github.com/alexleybourne/CodeMeetr/tree/master/src)
 
+___
+
+<h2>Installation and setup</h2>
+
+If you would like to setup this Applicaiton on your personal machine these are the steps required.
+
+<details>
+	<summary>
+		<b> Instructions </b>
+	</summary>
+	
+-   fork and clone
+-   bundle install
+-   update  `config/database.yml`  with your postgresql username & password
+-   update  `config/credentials.yml`  with your cloudinary api key. In order to decrypt the file to edit, type  `EDITOR='code --wait' rails credentials:edit`  into your command line.
+-   `rails db:setup`  - setup the database
+-   `rails db:schema:load`  - load the schema for the database
+-   `rails db:seed`  - load the items into the database
+-   `rails s`  to run the server
+
+The default server is located at  [http://localhost:3000/](http://localhost:3000/)
+
+</details>
 
 ___
 
@@ -83,24 +106,129 @@ ___
 		<b> Ruby on Rails </b>
 	</summary>
 	
-	Ruby on Rails, or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages
+Ruby on Rails, or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages
 	
 [Rails v- 5.2.3](https://guides.rubyonrails.org/v5.2/getting_started.html)
+
 [Ruby v-2.6.3](https://ruby-doc.org/stdlib-2.6.3/)
 
 </details>
 
--   HTML
--   SCSS
-	- Bootstrap
-- Javascript
--   Postgresql
--   Rspec for unit testing
--  Cloudinary for image storage in production
--  Git/Github for source control
--  Heroku for deployment
+<details>
+	<summary>
+		<b> PostgreSQL </b>
+	</summary>
+	
+PostgreSQL is a free and open-source relational database management system emphasizing extensibility and technical standards compliance built on the SQL language. It is designed to handle a range of workloads, from single machines to data warehouses or Web services with many concurrent users.
+	
+[PostgreSQL](https://www.postgresql.org/docs/10/index.html)
+
+</details>
+
+<details>
+	<summary>
+		<b> HTML 5 </b>
+	</summary>
+	
+HTML5 is a software solution stack that defines the properties and behaviors of web page content by implementing a markup based pattern to it. HTML5 is the fifth and current major version of HTML, and subsumes XHTML. HTML was used for our web front end.
+	
+[HTML5](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5)
+</details>
+
+<details>
+	<summary>
+		<b> SCSS - Bootstrap & FontAwesome </b>
+	</summary>
+	
+Bootstrap, the world’s most popular framework for building responsive, mobile-first sites. Bootstrap was used for all styling and interactive components on the site. Bootstrap was used for its ease of use, aesthetic appeal, numerous components, JS integrations and responsive first properties. Bootstrap speeds up front end development immensely.
+Font Awesome is a web font containing all the icons from the Twitter Bootstrap framework, and now many more. It allows you to easily use many icons across your site that are stored remotely.
+
+[Bootstrap](https://getbootstrap.com/docs/4.3/getting-started/introduction/)
+
+[FontAwesome](https://fontawesome.com/?utm_source=v4_homepage&utm_medium=display&utm_campaign=fa5_released&utm_content=banner)
+
+</details>
 
 
+<details>
+	<summary>
+		<b> Javascript </b>
+	</summary>
+	
+JavaScript, often abbreviated as JS, is a high-level, interpreted scripting language that conforms to the ECMAScript specification. JavaScript has curly-bracket syntax, dynamic typing, prototype-based object-orientation, and first-class functions Javascript was also used for many front end interactions, such as repsonsive drop downs and many under the hood Bootstrap integrations.
+
+[Javascript](https://devdocs.io/javascript/)
+</details>
+
+### Ruby Gems
+
+ <details>
+	<summary>
+		<b> Devise </b>
+	</summary>
+	
+Devise is used for user authentication. Everything from Login, Sessions, Secure passwords and more.
+
+[Devise Gem](https://rubygems.org/gems/devise/versions/4.2.0)
+</details>
+
+<details>
+	<summary>
+		<b> Rolify </b>
+	</summary>
+	
+Rolify was first originally used in this Appliction for user Authorisation. However it was conflicting with Heroku, resulting in it being uninstalled. Users are now all Authorised by their user id. Many actions will only go through if they are signed in with devise and their current user id matches the resources attached user id.
+
+[Rolify Gem](https://rubygems.org/gems/rolify)
+</details>
+
+<details>
+	<summary>
+		<b> Cloudinary </b>
+	</summary>
+	
+The Cloudinary gem is used for the integration of the 3rd party service cloudinary. This is used for image uploads through the applicaiton.
+
+[Cloudinary Gem](https://rubygems.org/gems/cloudinary)
+</details>
+
+### Third Party Services
+
+<details>
+	<summary>
+		<b> Cloudinary </b>
+	</summary>
+	
+Cloudinary is a image cloud hosting service that allows you to off-load the tasks of uploading and handling image assests. Cloudinary dynamically optimises your content and delivers it in a fast and efficient manner. 
+
+[Cloudinary](https://cloudinary.com/)
+
+</details>
+
+<details>
+	<summary>
+		<b> Heroku </b>
+	</summary>
+	
+Heroku is a container-based cloud Platform as a Service (PaaS). Developers use Heroku to deploy, manage, and scale modern apps. This Appliction makes use of Heroku's free service model for small projects. Heorku also streamlines deployment through its Git integration allowing updates to easily be pushed to Heroku as you would any other remote git repository.
+
+[Heorku](https://www.heroku.com/home)
+
+</details>
+
+<details>
+	<summary>
+		<b> Github</b>
+	</summary>
+	
+Last but not least it Github, a developers best friend. GitHub is a website and cloud-based service that helps developers store and manage their code, as well as track and control changes to their code.
+
+[Github](https://github.com/)
+
+</details>
+
+___
+## Database Structure 
 
 ## User Stories
 
