@@ -315,7 +315,9 @@ ___
 
 ![CodeMeetr Database](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/CodeMeetr_Database_ERD.png?raw=true)
 
-Databases in rails use active record assosciations to creat reationships between the different modls present in the databse. There are also foreign key and primary keys to form the foundations of relational databases. These keys are used to create the connections between the different models. 
+Databases in rails use active record assosciations to creat reationships between the different modls present in the databse. There are also foreign key and primary keys to form the foundations of relational databases. These keys are used to create the connections between the different models. The database is built using postgreSQL , which creates migrations holding the queries and form our database schema. 
+
+The Database focuses on users and events. They are the two largest data sets. As shown above they depend on eachother. An event cannot be created without a user. Each user has
 
 ----
 ## Project plan and Task Management :book:
