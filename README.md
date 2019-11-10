@@ -1,4 +1,4 @@
-﻿# T2A2 - Marketplace Project
+﻿# T2A2 - Marketplace Project :rocket:
 
 ![CodeMeetr Logo](https://github.com/alexleybourne/CodeMeetr/blob/master/graphics/CodeMeetr_logo.png?raw=true)
 
@@ -16,7 +16,7 @@ Source code:
 
 ___
 
-<h2>Installation and setup</h2>
+## Installation and setup :gear:
 
 If you would like to setup this Applicaiton on your personal machine these are the steps required.
 
@@ -40,18 +40,41 @@ The default server is located at  [http://localhost:3000/](http://localhost:3000
 
 ___
 
-<h2>Application Purpose</h2>
-CodeMeetr was inspired by recent events involving the popular events app "meetup.com". Meetup announced they will be charging event holders per user who clicks attending or possibly charging the attendees for their service. This inspired me to create an alternative that would focus on coding and the tech community. The number one spot for your hackathon events, callbacks and other goodies.  <br>
+## Application Purpose :memo:
+CodeMeetr was inspired by recent events involving the popular events app "meetup.com". Meetup announced they will be charging event holders per user who clicks attending or possibly charging the attendees for their service. This inspired me to create an alternative that would focus on the coding and tech community. The number one spot for your hackathon events, callbacks and other goodies.  <br>
+
+This upcoming problem needs to be solved to allow our tech community to continue to thrive and stay safe from the potential major disruption meetups changes could make. Also a coding specific service removes clutter and allows the service to be catered specifically to the communities needs as the audience is less wide and general.
+
+The target audience for this application is primarily those interested in coding events and people who host them already. Anythign from hackahtons, meetups, info nights and more. This allows these users to go to one place and get some coding goodness without all the clutter. So The average user would be someone who would like to or regualry attends coding based events and a person who hosts them.
 
 ___
-<h2> Functionality and Features</h2>
+## Functionality and Features :zap:
 CodeMeetr's main object is to allow code enthusiasts to easily find events that are being hosted around them that interest them. When the user visits the site they are immediately greeted with the top events coming up! 
 The user can view the events in a brief overview and then click the event to see more. The events show a cover image, title, host, description, date and time as well as how many people are going and how many spaces are left. 
 To click going to an event the user must create an account and sign in. Once you have made an account you are also able to create and manage events. 
 Users can also easily search for events by typing in key words that may interest them. The previews also display which events are yours and which events you are already going to in a very intuitive and user friendly manner. 
 
+
 ___
-## Feautres 
+## User Stories :notebook_with_decorative_cover:
+
+
+
+___
+## Sitemap :telescope:
+
+![Code Meetr Site Map](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/Site_map.png?raw=true)
+
+---
+##  Screenshots  :camera:
+
+![Home Screen](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/screenshots/Logged-in-Screen.png?raw=true)
+
+See all the Screenshots here:
+
+- [Screenshots Folder](https://github.com/alexleybourne/CodeMeetr/tree/master/docs/screenshots)
+___
+## Feautres :gem:
 
 <details>
 	<summary>
@@ -100,7 +123,7 @@ ___
 </details>
 
 ___
-## Tech stack 
+## Tech stack :floppy_disk:
 <details>
 	<summary>
 		<b> Ruby on Rails </b>
@@ -227,13 +250,15 @@ Last but not least it Github, a developers best friend. GitHub is a website and 
 
 </details>
 
+
+
+
 ___
-## Database Structure 
-
-## User Stories
+## Database Structure :open_file_folder:
 
 
-## Mockups
+
+## Mockups :pencil2:
 Wireframes:
 [Rough Sketches](https://projects.invisionapp.com/freehand/document/1OlpCT6OA)
 [Wireframe Sketches](https://raw.githubusercontent.com/alexleybourne/CodeMeetr/master/graphics/CodeMeetr_wireframe_sketches.png)
