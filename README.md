@@ -310,14 +310,10 @@ Last but not least it Github, a developers best friend. GitHub is a website and 
 
 </details>
 
----
-## Databse Design
-
-![CodeMeetr Database](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/CodeMeetr_Database_ERD.png?raw=true)
-
-
 ___
 ## Database Structure :open_file_folder:
+
+![CodeMeetr Database](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/CodeMeetr_Database_ERD.png?raw=true)
 
 Databases in rails use active record assosciations to creat reationships between the different modls present in the databse. There are also foreign key and primary keys to form the foundations of relational databases. These keys are used to create the connections between the different models. 
 
@@ -332,6 +328,14 @@ I sorted each task in to small bite size pieces to tackle that would slowly form
 
 ---
 ### Project Timeline:
+
+</details>
+
+<details>
+	<summary>
+		<b> Timeline</b>
+	</summary>
+	
 - Friday :rocket: - 25/10/19
 	 - release date of assignment
 	 - research started on ideas
@@ -388,4 +392,4 @@ I sorted each task in to small bite size pieces to tackle that would slowly form
 	- Creating slide deck
 - FINISHED :tada:
 
-
+</details>
