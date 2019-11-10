@@ -58,6 +58,26 @@ Users can also easily search for events by typing in key words that may interest
 ___
 ## User Stories :notebook_with_decorative_cover:
 
+- Users can view all events
+	- The user does not have to be signed in to view all events
+- Users can attend events
+  - Only when the user is signed in
+ - Users can create an event
+   - Only when they are signed in   
+   -  Users can also edit their own events
+ - Users can create an account
+	 - Users can change upload a profile photo
+	 - Users can edit their details
+ - Users can upload a photo to their event
+ - Users can log in and out
+ - Users can see which events they are attending
+	 - They can also see which events they own
+- Users can search for events
+### Strech Goals:
+- Users can upload many photos to their event
+- Users can view events in calendar view
+- Users can comment on events
+- Users can like events
 
 
 ___
@@ -73,6 +93,46 @@ ___
 See all the Screenshots here:
 
 - [Screenshots Folder](https://github.com/alexleybourne/CodeMeetr/tree/master/docs/screenshots)
+
+---
+##  Wireframes & Mockups :pencil2:
+
+### Event Mockups:
+
+![Mockups](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/mockups/CodeMeetr_Home_Desktop.png?raw=true)
+
+<details>
+	<summary>
+		<b> All Mockups </b>
+	</summary>
+
+Event Desktop Mockup:
+![Event desktop mockup](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/mockups/CodeMeetr_Event_Desktop.png?raw=true)
+
+Event Mobile Mockup: 
+
+![Event moblie mockup](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/mockups/CodeMeetr_Event_Mobile.png?raw=true)
+
+Link to all mockup images:
+[Mockups](https://github.com/alexleybourne/CodeMeetr/tree/master/docs/mockups)
+
+</details>
+
+
+
+<details>
+	<summary>
+		<b> Wireframes </b>
+	</summary>
+	
+![Hand Drawn Wireframes](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/CodeMeetr_wireframe_sketches.png?raw=true)
+
+Full image:
+[Hand drawn wireframes](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/CodeMeetr_wireframe_sketches.png?raw=true)
+</details>
+
+
+
 ___
 ## Feautres :gem:
 
@@ -257,14 +317,6 @@ ___
 ## Database Structure :open_file_folder:
 
 
-
-## Mockups :pencil2:
-Wireframes:
-[Rough Sketches](https://projects.invisionapp.com/freehand/document/1OlpCT6OA)
-[Wireframe Sketches](https://raw.githubusercontent.com/alexleybourne/CodeMeetr/master/graphics/CodeMeetr_wireframe_sketches.png)
-
-Final Mockups:
-[Mockups Folder](https://github.com/alexleybourne/CodeMeetr/tree/master/graphics/mockups)
 
 
 
