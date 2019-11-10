@@ -26,6 +26,7 @@ CodeMeetr's main object is to allow code enthusiasts to easily find events that 
 The user can view the events in a brief overview and then click the event to see more. The events show a cover image, title, host, description, date and time as well as how many people are going and how many spaces are left. 
 To click going to an event the user must create an account and sign in. Once you have made an account you are also able to create and manage events. 
 Users can also easily search for events by typing in key words that may interest them. The previews also display which events are yours and which events you are already going to in a very intuitive and user friendly manner. 
+
 ___
 ## Feautres 
 
@@ -77,16 +78,16 @@ ___
 
 ___
 ## Tech stack 
--  <details>
+<details>
 	<summary>
 		<b> Ruby on Rails </b>
 	</summary>
 	
 	Ruby on Rails, or Rails, is a server-side web application framework written in Ruby under the MIT License. Rails is a model–view–controller framework, providing default structures for a database, a web service, and web pages
+	
+[Rails v- 5.2.3](https://guides.rubyonrails.org/v5.2/getting_started.html)
+[Ruby v-2.6.3](https://ruby-doc.org/stdlib-2.6.3/)
 
-<b> Verisons: </b>
-- [Rails v- 5.2.3](https://guides.rubyonrails.org/v5.2/getting_started.html)
-- [Ruby v-2.6.3](https://ruby-doc.org/stdlib-2.6.3/)
 </details>
 
 -   HTML
