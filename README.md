@@ -317,7 +317,7 @@ ___
 
 Databases in rails use active record assosciations to creat reationships between the different modls present in the databse. There are also foreign key and primary keys to form the foundations of relational databases. These keys are used to create the connections between the different models. The database is built using postgreSQL , which creates migrations holding the queries and form our database schema. 
 
-The Database focuses on users and events. They are the two largest data sets. As shown above they depend on eachother. An event cannot be created without a user. Each user has
+The Database focuses on users and events. They are the two largest data sets. As shown above they depend on eachother. An event cannot be created without a user. Each user has their Devise login details but also a string for images to store a default profile image and a join tbale that links them to any the user clicks going to. The events hold lots of information and are they main part. Each event holds their own information but link to other tbales for more such as Attendees, promotion, capacity, images and categories.  A user can create as many events as they like however an event can only have one owner and can only have as many attendees as the capacity allows. 
 
 ----
 ## Project plan and Task Management :book:
