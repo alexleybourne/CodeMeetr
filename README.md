@@ -310,13 +310,82 @@ Last but not least it Github, a developers best friend. GitHub is a website and 
 
 </details>
 
+---
+## Databse Design
 
+![CodeMeetr Database](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/CodeMeetr_Database_ERD.png?raw=true)
 
 
 ___
 ## Database Structure :open_file_folder:
 
+Databases in rails use active record assosciations to creat reationships between the different modls present in the databse. There are also foreign key and primary keys to form the foundations of relational databases. These keys are used to create the connections between the different models. 
 
+----
+## Project plan and Task Management :book:
 
+In the begining of the Assessment I printed out the criteria and made sure to read through all the deliverables and the ruberick. From there I started brainstorming on ideas and researching two sided marketplaces until I formed an idea I would like to persue. I soon formed the plan for a meetup alternative and got to work. To start I made wireframes and some mockups as they helped form an idea of what was needed and how everything will fit together. From there I started a projects board on github and started making tasks for myself. I found this helpful but also found myself writing stuff on random pieces of paper or in my phone notes as they came up as an idea. I need to focus on putting all tasks and ideas in one place.
+
+![Project Board](https://github.com/alexleybourne/CodeMeetr/blob/master/docs/Task_Board.png?raw=true)
+
+I sorted each task in to small bite size pieces to tackle that would slowly form the entire project. It's very satisfying moving a task to complete. I also made some extra features I would like to include also. I would say the hardest part in the begining was thinking of an idea and making sure it was achievable and I could stick to the scope. I started and restarted numerous times to reform my ideas.
+
+---
+### Project Timeline:
+- Friday :rocket: - 25/10/19
+	 - release date of assignment
+	 - research started on ideas
+- Sat -> Sun :unamused:
+	- unfortunately jam packed full of work
+- Mon - 28/10/19 :computer:
+	- continued research and began wireframes
+- Tues - 29/10/19 :pencil:
+	- finalised wireframes and began on some mockups
+	- also revised previous lessons
+- Wed - 30/10/19 :pencil:
+	- stilll working on mockups
+	- started writing down features
+	- more revision
+- Halloween  :jack_o_lantern: :ghost: - 31/10/19
+	- completed mockups
+	- create project on heroku
+- Fri :beers:  - 1/11/19
+	- more revision
+	- followed a few tutorials on rails
+- Sat -> Sun :unamused:
+	- unfortunately jam packed full of work again..
+- Mon :file_folder: - 4/11/19
+	- created project
+	- worked out models
+	- started ERD
+- Tues :file_folder: - 5/11/19
+	- continued ERD
+	- Set out all data
+- Wed :wrench: - 6/11/19
+	- ERD complete
+	- Setup models and controllers
+- Thurs :closed_lock_with_key: - 7/11/19
+	- Devise setup
+	- Front page created and nav
+- Fri :satellite: - 8/11/19
+	- Created events
+	- Deployed to Heroku
+	- Event creation page
+	- User links
+	- Full page views
+	- Rolify
+- Sat :sweat_smile: - 9/11/19
+	- Felt the stress
+	- Got Cloudinary working
+	- More Styling 
+	-  Search function
+- Sun :flushed: - 10/11/19
+	- Lots of Final Documentation
+	- Testing
+	- Heroku Deployments
+	- Rolify hating Heroku
+	- Destroying Rolify
+	- Creating slide deck
+- FINISHED :tada:
 
 
