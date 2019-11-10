@@ -96,9 +96,10 @@
     <% elsif current_user.id == @event.user_id %>
 
       <div>
-      <p> Current Event Cost: $<%= @event.pricing.price %> </p>
-      <p> Current Event Promotion Cost:  $<%= @event.promotion.price %> </p>
+      <p> Current Event Size Cost: $<b style="color: #007bff"><%= @event.pricing.price %></b> </p>
+      <p> Current Event Promotion Cost:  $<b style="color: #007bff"><%= @event.promotion.price %></b> </p>
       <p>  </p>
+      <p> Total: <b style="color: #007bff">$<%= @event.pricing.price + @event.promotion.price %> </b></p>
       <%= button_to 'Edit Your Event', edit_event_path(@event), :method => "get", class: "btn btn-primary btn-lrg", style: "font-size: 30px;" %>
       </div>
 
