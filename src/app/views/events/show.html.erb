@@ -100,8 +100,11 @@
       <p> Current Event Promotion Cost:  $<b style="color: #007bff"><%= @event.promotion.price %></b> </p>
       <p>  </p>
       <p> Total: <b style="color: #007bff">$<%= @event.pricing.price + @event.promotion.price %> </b></p>
-      <%= button_to 'Edit Your Event', edit_event_path(@event), :method => "get", class: "btn btn-primary btn-lrg", style: "font-size: 30px;" %>
+      <%= button_to 'Edit Your Event', edit_event_path(@event), :method => "get", class: "btn btn-primary btn-lrg", style: "font-size: 30px;" %> <br>
+      <%= button_to 'Delete Event', event_path(@event), :method => "delete", class: "btn btn-outline-danger btn-lrg", style: "font-size: 15px;" %>
       </div>
+
+
 
     <% elsif (@event.users.include?(current_user)) %>
       

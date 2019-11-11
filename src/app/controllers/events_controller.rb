@@ -25,8 +25,12 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    pp params
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+    @event.start_time = Time.parse(params[:event][:start_time]).to_i
+    @event.end_time = Time.parse(params[:event][:end_time]).to_i
+    puts Time.parse(params[:event][:start_time]).to_i
 
     respond_to do |format|
       if @event.save
@@ -43,7 +47,8 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     @event.top_image.attach(params[:event][:top_image]) if params[:event][:top_image]
-    @event.save
+    @event.start_time = Time.parse(params[:event][:start_time]).to_i
+    @event.end_time = Time.parse(params[:event][:end_time]).to_i
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }

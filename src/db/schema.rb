@@ -56,8 +56,8 @@ ActiveRecord::Schema.define(version: 2019_11_08_134232) do
     t.string "host_name", null: false
     t.string "color", default: "blue", null: false
     t.string "location", null: false
-    t.integer "start_time", null: false
-    t.integer "end_time", null: false
+    t.intger "start_time", null: false
+    t.intger "end_time", null: false
     t.bigint "pricing_id"
     t.bigint "promotion_id"
     t.bigint "user_id", null: false
