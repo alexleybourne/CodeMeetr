@@ -40,8 +40,8 @@
 <div class="row-goodness">
   <% Event.all.sort_by(&:priority).reverse.each do |event| %>
   <div class="d-flex justify-content-center" style="padding-top: 1rem; padding-bottom: 1rem;">
-    <div class="card text-center" style="max-width: 24vw; position: relative;">
-
+    <div class="card text-center" style="max-width: 1000px; position: relative;">
+      
       <h3 style=" position: absolute; top: 25%;
       left: 50%; transform: translate(-50%, -50%);" class="btn btn-<%=event.color %> btn-lg btn-opacity">
         <%= event.title %></h3>

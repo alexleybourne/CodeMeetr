@@ -47,7 +47,17 @@ div.row-goodness {
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: auto;
+  gap: 30px;
+}
+
+
+@media only screen and (max-width: 700px) {
+  div.row-goodness {
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+  }
 }
 
 .btn-opacity {
